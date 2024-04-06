@@ -1,3 +1,48 @@
+###DASAR
+# a = int (input()) #input di terminal
+# a = 5
+# if a % 2 == 0 :
+#     print("Bilangan Genap")
+# else: 
+#     print("Bilangan Ganjil")
+
+# A = "8"
+# print(A)
+# print(type(A))
+# a = 3
+# print(a)
+# print(type(a))
+
+# x = 0
+# if x > 0:
+#     print("Positif")
+# elif x ==0:
+#     print("nol")
+# else:
+#     print("Negatif")
+
+# for i in range(10):
+#     print(i*2) # mencetak bilangan genap sebanyak 10 bilangan
+
+# angka = 1
+# while angka < 8:
+#     print(angka)
+#     angka +=2
+
+#my_list = [] #input angka diterminal
+# fruits = ["anggur","pisang","pir"]
+# numbers = [1,2,3,4,5]
+#my_list = [1,"apel",True,3.6]
+
+#mytup = (2,3,4)
+myset = {1,2,3}
+print(myset)
+
+
+
+
+
+
 ### OOP
 #membuat sebuah kelas
 class Cat:
@@ -85,6 +130,11 @@ class ElectricCar:
         print ("Baterai: ",self.batery)
 batery = ElectricCar("Honda","Biru","100kWh")
 batery.display_batery_info()
+
+
+
+
+
 
 ###REKRUSIF
 #membuat fungsi faktorial
@@ -190,6 +240,71 @@ A = 'aku suka makan ayam betina'
 print(A)
 B = A.replace('makan','cium')
 print(B)
+
+
+
+
+
+###STACKANDQUEUE
+class Stack:
+    def __init__(self):
+        self.items=[]
+    def is_empty(self):
+        return self.items==[]
+    def push(self,item):
+        self.items.append(item)
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            print("stack kosong")
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        else:
+            print("stack kosong")
+    def size(self):
+        return len(self.items)
+
+s= Stack()
+# s.push(1)#kalau append itu nambahin datanya satu satu
+# s.push(2)#push masukin data
+# s.push(3)
+# print("stuck",s.items)
+# print("stuck akhir :",s.peek())
+# print("buang : ",s.pop())
+# print("stack setelah dibuang : ",s.items)
+while True:
+    print("Pilih Kategori")
+    print("1. Push")
+    print("2. Pop")
+    print("3. Peek")
+    print("4. Menampilkan Seluruh Data")
+    print("5. Exit")
+    pilihan = input("Silahkan Pilih Nomor :")
+    if pilihan == '1':
+        item = input("push :")
+        s.push(item)
+        print(item,"berhasil diinput")
+    elif pilihan == '2':
+        item = s.pop()
+        if item is not None:
+            print(" Data ",item,"dihapus")
+    elif pilihan == '3':
+        item = s.peek()
+        if item is not None:
+            print("Data paling akhir:", item)
+    elif pilihan == '4':
+        if not s.is_empty():
+            print("Isi Data:", s.items)
+        else:
+            print("Stack kosong.")
+    elif pilihan == '5':
+        print("Program selesai.")
+        break        
+
+
+    
 
     
 
